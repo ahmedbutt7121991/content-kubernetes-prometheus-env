@@ -1,0 +1,45 @@
+432  adduser prometheus
+  433  cd /home/prometheus/
+  434  curl -LO "https://github.com/prometheus/node_exporter/releases/download/v0.16.0/node_exporter-0.16.0.linux-amd64.tar.gz"
+  435  ls
+  436  tar zxvf node_exporter-0.16.0.linux-amd64.tar.gz
+  437  ls
+  438  cd node_exporter-0.16.0.linux-amd64
+  439  ls
+  440  cd
+  441  ls
+  442  cd /home/prometheus/
+  443  ls
+  444  mv node_exporter-0.16.0.linux-amd64 node_exporter
+  445  ls
+  446  cd node_exporter
+  447  ls
+  448  ll
+  449  chown prometheus:prometheus node_exporter
+  450  ll
+  451  vi /etc/systemd/system/node_exporter.service
+file contains Data:
+[Unit]
+Description=Node Exporter
+
+[Service]
+User=prometheus
+ExecStart=/home/prometheus/node_exporter/node_exporter
+
+[Install]
+WantedBy=default.target
+  452  l
+  453  ks
+  454  ls
+  455  ll
+  456  cat node_exporter
+  457  ls
+  458  pwd
+  459  systemctl deamon-reload
+  460  systemctl daemon-reload
+  461  systemctl enable node_exporter.service
+  462  systemctl status node_exporter.service
+  463  systemctl start node_exporter.service
+  464  systemctl status node_exporter.service
+  465  history
+
